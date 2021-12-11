@@ -14,4 +14,4 @@ class Vet:
 		return self.id
 
 	def __str__():
- 		return "name: " + name + " , " + "animal: " + animal + " , " + "id = None: " + id = None
+		return f"name: {self.name}, animal: {self.animal}, id: {self.id}"
