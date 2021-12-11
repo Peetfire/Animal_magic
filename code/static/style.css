@@ -26,13 +26,21 @@ body {
       margin: auto;
   }
 
-  #text-container {
+  /* #right-container {
+    
+  } */
+
+  #right-text-container > h1 {
     font-family: MyVirgilWebFont;
-    font-size: 3em;
+    font-size: 1.5em;
     color: rgb(0, 0, 0);
+    margin: 0;
   }
 
-  #text-container > h1 {
+  #left-text-container > h1 {
+    font-family: MyVirgilWebFont;
+    font-size: 6em;
+    color: rgb(0, 0, 0);
     margin: 0;
   }
 
@@ -41,6 +49,12 @@ body {
     display: flex;
     flex-wrap: nowrap;
     align-items: flex-end;
+  }
+
+  #right-container {
+    display: inline-block;
+    align-items: flex-end;
+
   }
 
   
