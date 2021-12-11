@@ -1,7 +1,7 @@
 import unittest
 
 # import Test classes from tests here
-# from tests.staff_test import TestStaff
+from tests.vet_test import TestVet
 
  
  

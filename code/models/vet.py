@@ -13,5 +13,3 @@ class Vet:
 	def get_id(self):
 		return self.id
 
-	def __str__():
-		return f"name: {self.name}, animal: {self.animal}, id: {self.id}"
