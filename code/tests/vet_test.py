@@ -11,7 +11,6 @@ class TestVet(unittest.TestCase):
         self.owner1 = Owner("Chatty Bob", "bobchat@gamil.com", "07982 543 627")
         self.animal1 = Animal("Mushroom MacGee", "Cat", "10/12/2017", self.owner1)
         self.vet1 = Vet("Supervet", self.animal1)
-        print(self.vet1.__str__())
 
     def test_has_name(self):
         expected = "Supervet"
