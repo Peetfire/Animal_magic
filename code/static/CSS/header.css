@@ -1,0 +1,45 @@
+header {
+    padding: 16px;
+    background-color: white;
+    text-align: left;
+    grid-area: header;
+    border-width: 0 0 10px 0;
+    border-color: black;
+    border-style: double;
+  }
+
+  #header-container{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      width: 70%;
+      height: fit-content;
+      margin: auto;
+  }
+
+  #right-text-container > h1 {
+    font-family: MyVirgilWebFont;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    margin: 0;
+  }
+
+  #left-text-container > h1 {
+    font-family: MyVirgilWebFont;
+    font-size: 6em;
+    color: rgb(0, 0, 0);
+    margin: 0;
+  }
+
+  #logo-container {
+    height:auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  }
+
+  #right-container {
+    display: inline-block;
+    align-items: flex-end;
+  }

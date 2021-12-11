@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+  }
+  
+  #main-content {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: main;
+  }
+  
+  
+  #grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header'
+      'menu main blank'
+      'footer footer footer';
+    grid-template-columns: 2fr 8fr 2fr;
+  
+  }
