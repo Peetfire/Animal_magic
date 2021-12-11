@@ -3,7 +3,7 @@ class Appointment:
 		self.note_text = note_text
 		self.appt_date = appt_date
 		self.vet = vet
-		self.pet = pet
+		self.animal = animal
 		self.id = id
 		
 	def get_note_text(self):
@@ -16,11 +16,8 @@ class Appointment:
 		return self.vet
 
 	def get_animal(self):
-		return self.pet
+		return self.animal
 
 	def get_id(self):
 		return self.id
 
-
-	def __str__():
- 		return f"note_text: {note_text}, appt_date: {appt_date}, vet: {vet}, pet: {pet}, id: {id}"

@@ -20,7 +20,3 @@ class Animal:
 
 	def get_id(self):
 		return self.id
-
-
-	def __str__():
- 		return "undefined: " + undefined + " , " + "name: " + name + " , " + "species: " + species + " , " + "dob: " + dob + " , " + "owner: " + owner + " , " + "id: " + id

@@ -17,6 +17,3 @@ class Owner:
 	def get_id(self):
 		return self.id
 
-
-	def __str__():
- 		return "name: " + name + " , " + "email: " + email + " , " + "phone: " + phone + " , " + "id: " + id
