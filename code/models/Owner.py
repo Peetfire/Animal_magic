@@ -1,5 +1,5 @@
 class Owner:
-	def __init__(self, name, email, phone, id):
+	def __init__(self, name, email, phone, id=None):
 		self.name = name
 		self.email = email
 		self.phone = phone
