@@ -1,5 +1,6 @@
 # import db
 from db.run_sql import run_sql
+from models.appointment import Appointment
 
 # import models
 # from models.appointment import Appointment
@@ -8,8 +9,9 @@ from db.run_sql import run_sql
 # from models.vet import Vet
 # # import repositories
 # import appointment_repository as appt_repo
-# import vet_repository as vet_repo
-# import animal_repository as animal_repo
+import vet_repository as vet_repo
+import animal_repository as animal_repo
+import owner_repository as owner_repo
 
 # Save
 def save(appt):
@@ -18,16 +20,26 @@ def save(appt):
     results = run_sql(sql, values)
     appt.id = results[0]['id']
     
-# Select All
-# def select_all():
-#     appts = []
-#     sql = "SELECT * FROM appointments"
-#     results = run_sql(sql)
-
-#     for result in results:
-#         appt = Appointment(result['note_text'], result['appt_date'], vet)
+def select_all():
+    appts = []
+    sql = "SELECT * FROM appointments"
+    results = run_sql(sql)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        animal = animal_repo.select(result['animal_id'])
+        appt = Appointment(result['note_text'], result['appt_date'], animal, vet, result['id'])
+        appts.append(appt)
+    return appts
 
 # Select id
+def select(id):
+    sql = "SELECT * FROM appointmnets WHERE id=%s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+    vet = vet_repo.select(result['vet_id'])
+    animal = animal_repo.select(result['animal_id'])
+    appt = Appointment(result['note_text'], result['appt_date'], animal, vet, result['id'])
+    return appt
 
 # Delete All
 def delete_all():
