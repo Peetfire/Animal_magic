@@ -22,7 +22,9 @@ def save(owner):
 # Select id
 
 # Delete All
-
+def delete_all():
+    sql = "DELETE FROM owners"
+    run_sql(sql)
 # Delete id
 
 # Update 

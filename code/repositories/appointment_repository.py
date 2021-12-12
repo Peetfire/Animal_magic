@@ -30,6 +30,9 @@ def save(appt):
 # Select id
 
 # Delete All
+def delete_all():
+    sql = "DELETE FROM appointments"
+    run_sql(sql)
 
 # Delete id
 

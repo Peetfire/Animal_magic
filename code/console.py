@@ -12,6 +12,11 @@ import repositories.owner_repository as owner_repo
 import repositories.animal_repository as animal_repo
 import repositories.appointment_repository as appt_repo
 
+vet_repo.delete_all()
+owner_repo.delete_all()
+animal_repo.delete_all()
+appt_repo.delete_all()
+
 vet1 = Vet("Noel Fitzpatrick")
 vet_repo.save(vet1)
 

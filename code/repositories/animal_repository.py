@@ -23,6 +23,9 @@ def save(animal):
 # Select id
 
 # Delete All
+def delete_all():
+    sql = "DELETE FROM animals"
+    run_sql(sql)
 
 # Delete id
 

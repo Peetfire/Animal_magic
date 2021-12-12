@@ -22,7 +22,9 @@ def save (vet):
 # Select id
 
 # Delete All
-
+def delete_all():
+    sql = "DELETE FROM vets"
+    run_sql(sql)
 # Delete id
 
 # Update 
