@@ -1,4 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-    Appointment info goes here
+    {% for appt in all_appts %}
+        {{appt.note_text}}
+        {{appt.appt_date}}
+        {{appt.animal}}
+        {{appt.vet}}
+    {% endfor %}
+
 {% endblock %}

@@ -1,4 +1,6 @@
 from db.run_sql import run_sql
+import pdb
+
 from models.owner import Owner
 
 # import models
@@ -30,7 +32,7 @@ def select_all():
 
 # Select id
 def select(id):
-    sql = "SELECT * FROM appointments WHERE id=%s"
+    sql = "SELECT * FROM owners WHERE id=%s"
     values = [id]
     result = run_sql(sql, values)[0]
     owner = Owner(result['name'], result['email'], result['phone'], result['id'])

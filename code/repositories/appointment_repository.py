@@ -1,17 +1,17 @@
 # import db
 from db.run_sql import run_sql
-from models.appointment import Appointment
-
+import pdb
 # import models
-# from models.appointment import Appointment
+from models.appointment import Appointment
 # from models.animal import Animal
 # from models.owner import Owner  
 # from models.vet import Vet
+
 # # import repositories
 # import appointment_repository as appt_repo
-import vet_repository as vet_repo
-import animal_repository as animal_repo
-import owner_repository as owner_repo
+import repositories.vet_repository as vet_repo
+import repositories.animal_repository as animal_repo
+# import owner_repository as owner_repo
 
 # Save
 def save(appt):
@@ -26,6 +26,7 @@ def select_all():
     results = run_sql(sql)
     for result in results:
         vet = vet_repo.select(result['vet_id'])
+        
         animal = animal_repo.select(result['animal_id'])
         appt = Appointment(result['note_text'], result['appt_date'], animal, vet, result['id'])
         appts.append(appt)

@@ -28,3 +28,4 @@ animal_repo.save(animal1)
 
 appt1 = Appointment("This is a note", "25/12/2021", vet1, animal1)
 appt_repo.save(appt1)
+appt_repo.select_all()
