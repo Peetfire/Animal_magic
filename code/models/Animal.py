@@ -1,9 +1,10 @@
 class Animal:
-	def __init__(self, name, species, dob, owner, id=None):
+	def __init__(self, name, species, dob, owner, vet, id=None):
 		self.name = name
 		self.species = species
 		self.dob = dob
 		self.owner = owner
+		self.vet = vet
 		self.id = id
 
 	def get_name(self):
@@ -17,6 +18,9 @@ class Animal:
 
 	def get_owner(self):
 		return self.owner
+
+	def get_vet(self):
+		return self.vet
 
 	def get_id(self):
 		return self.id

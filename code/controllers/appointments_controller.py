@@ -14,8 +14,8 @@ appointments_blueprint = Blueprint("appointments", __name__)
 # INDEX
 @appointments_blueprint.route("/appts")
 def appointments():
-    # appts = appt_repo.select_all()  , all_appts=appts
-    return render_template("appts/index.html")
+    appts = appt_repo.select_all()  
+    return render_template("appts/index.html", all_appts=appts)
 
 # NEW
 
