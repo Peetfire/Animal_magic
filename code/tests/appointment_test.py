@@ -1,10 +1,10 @@
 import unittest
 from unittest import result
 
-from models.Appointments import Appointment
-from models.Vet import Vet
-from models.Animal import Animal
-from models.Owner import Owner
+from models.appointment import Appointment
+from models.vet import Vet
+from models.animal import Animal
+from models.owner import Owner
 
 class TestAppointment(unittest.TestCase):
 

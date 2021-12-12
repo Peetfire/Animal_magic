@@ -3,7 +3,7 @@
 #content-container {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    border-width: 4px;
+    border-width: 6px;
     border-color: black;
     border-style: double;
     border-radius: 20px;
@@ -33,6 +33,16 @@
     height: fit-content
 }
 
+.button:hover {
+    color: #737773;
+    text-decoration-line: underline;
+}
+
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 #button-content {
     display: flex;
     justify-items: center;
@@ -48,4 +58,5 @@
 
 #button-content > h3 {
     margin: 0;
+    margin-right: 20px;
 }

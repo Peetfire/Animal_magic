@@ -1,9 +1,9 @@
 import unittest
 from unittest import result
 
-from models.Vet import Vet
-from models.Animal import Animal
-from models.Owner import Owner
+from models.vet import Vet
+from models.animal import Animal
+from models.owner import Owner
 
 class TestVet(unittest.TestCase):
 
