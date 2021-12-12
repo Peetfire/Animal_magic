@@ -20,7 +20,7 @@
     text-decoration-line: underline;
 }
 
-#content-container > button {
+#content-container > form > button {
     font-family: MyVirgilWebFont;
     padding: 2px;
     margin: 5px;
@@ -34,8 +34,7 @@
 }
 
 #button-content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
+    display: flex;
     justify-items: center;
     align-items: center;
 }
@@ -43,6 +42,8 @@
 #button-content > img {
     height: 65px;
     width: 65px;
+    margin-left: 10px;
+    margin-right: 20px;
 }
 
 #button-content > h3 {
