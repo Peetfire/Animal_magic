@@ -39,6 +39,11 @@ header {
     text-align: right;
   }
 
+  #left-text-container > h1 > a {
+    color: black;
+    text-decoration: none;
+  }
+
   #logo-container {
     height:auto;
     display: flex;
