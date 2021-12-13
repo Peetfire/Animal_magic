@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="container">
+    <div class="headings vet-headings">
+        <div class="vet-col1">{{all_vets[0].get_headings()[0]}}</div>
+
+    </div>
+
+    {% for vet in all_vets %}
+        <div class="row vet-row">
+            <div class="vet-col1">{{vet.get_name()}}</div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock content %}

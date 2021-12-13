@@ -3,20 +3,20 @@
 {% block content %}
 <section id="container">
     <div class="headings animal-headings">
-        <div class="col col1">{{all_animals[0].get_headings()[0]}}</div>
-        <div class="col col2">{{all_animals[0].get_headings()[1]}}</div>
-        <div class="col col3">{{all_animals[0].get_headings()[2]}}</div>
-        <div class="col col4">{{all_animals[0].get_headings()[3]}}</div>
-        <div class="col col5">{{all_animals[0].get_headings()[4]}}</div>
+        <div class="animal-col1">{{all_animals[0].get_headings()[0]}}</div>
+        <div class="animal-col2">{{all_animals[0].get_headings()[1]}}</div>
+        <div class="animal-col3">{{all_animals[0].get_headings()[2]}}</div>
+        <div class="animal-col4">{{all_animals[0].get_headings()[3]}}</div>
+        <div class="animal-col5">{{all_animals[0].get_headings()[4]}}</div>
     </div>
 
     {% for animal in all_animals %}
         <div class="row animal-row">
-            <div class="col col1">{{animal.get_name()}}</div>
-            <div class="col col1">{{animal.get_species()}}</div>
-            <div class="col col1">{{animal.get_dob()}}</div>
-            <div class="col col1">{{animal.get_owner()}}</div>
-            <div class="col col1">{{animal.get_vet()}}</div>
+            <div class="animal-col1">{{animal.get_name()}}</div>
+            <div class="animal-col2">{{animal.get_species()}}</div>
+            <div class="animal-col3">{{animal.get_dob()}}</div>
+            <div class="animal-col4">{{animal.get_owner()}}</div>
+            <div class="animal-col5">{{animal.get_vet()}}</div>
         </div>
     {% endfor %}
 </section>

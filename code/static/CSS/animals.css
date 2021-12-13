@@ -4,4 +4,26 @@
 
 .animal-row {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.animal-col1{
+    padding: 3px;
+    text-align: center;
+}
+.animal-col2{
+    padding: 3px;
+    text-align: center;
+}
+.animal-col3{
+    padding: 3px;
+    text-align: center;
+}
+.animal-col4{
+    padding: 3px;
+    text-align: center;
+}
+.animal-col5{
+    padding: 3px;
+    text-align: center;
 }

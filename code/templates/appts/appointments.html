@@ -2,18 +2,18 @@
     
     <section id="container">
         <div class="headings appt-headings">
-            <div class="col col1">{{all_appts[0].get_headings()[0]}}</div>
-            <div class="col col2">{{all_appts[0].get_headings()[1]}}</div>  
-            <div class="col col3">{{all_appts[0].get_headings()[2]}}</div> 
-            <div class="col col4">{{all_appts[0].get_headings()[3]}}</div>
+            <div class="appt-col1">{{all_appts[0].get_headings()[0]}}</div>
+            <div class="appt-col2">{{all_appts[0].get_headings()[1]}}</div>  
+            <div class="appt-col3">{{all_appts[0].get_headings()[2]}}</div> 
+            <div class="appt-col4">{{all_appts[0].get_headings()[3]}}</div>
         </div>
     
         {% for appt in all_appts %}
             <div class="row appt-row">
-                <div class="col col1">{{appt.appt_date}}</div>
-                <div class="col col2">{{appt.animal.get_name()}}</div>  
-                <div class="col col3">{{appt.note_text}}</div> 
-                <div class="col col4">{{appt.vet.get_name()}}</div>
+                <div class="appt-col1">{{appt.appt_date}}</div>
+                <div class="appt-col2">{{appt.animal.get_name()}}</div>  
+                <div class="appt-col3">{{appt.note_text}}</div> 
+                <div class="appt-col4">{{appt.vet.get_name()}}</div>
             </div>
         {% endfor %}
     </section>

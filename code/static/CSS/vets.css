@@ -1,0 +1,13 @@
+.vet-headings {
+    grid-template-columns: 1fr;
+}
+
+.vet-row {
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+.vet-col1{
+    padding: 3px;
+    text-align: left;
+}

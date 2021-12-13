@@ -9,5 +9,6 @@ class Vet:
 	def get_id(self):
 		return self.id
 
-	
+	def get_headings(self):
+		return ["Name"]
 
