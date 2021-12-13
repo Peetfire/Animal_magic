@@ -7,6 +7,14 @@
     align-items: center;
 }
 
+.animal-row > a {
+    color: grey;
+}
+
+.animal-row > a:hover {
+    color: black;
+}
+
 .animal-col1{
     padding: 3px;
     text-align: center;
