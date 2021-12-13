@@ -16,37 +16,5 @@
     justify-content: space-evenly;
 }
 
-.edit-del-row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-    margin-bottom: 0;
-    align-items: center;
-}
 
-.edit-del-row > form > button {
-    font-family: MyVirgilWebFont;
-    padding: 2px;
-    margin: 5px;
-    font-size: 1em;
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    display: table-cell;
-    vertical-align: middle;
-    height: fit-content
-}
 
-.edit-del-row > form > button:hover {
-    color: black;
-}
-
-.edit-del-row > form > button:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
-  }
-
-#button-content > img {
-    width: 40px;
-    height: auto;
-}

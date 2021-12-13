@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="container">
+    <h1>Add New Vet</h1>
+    <form action="/vets" method="POST">
+        <div class="headings">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="small-button-row">
+            <button class="small-button" type="submit">
+                <div id="button-content">
+                    <img src="../../static/img/icons/save_button.png">
+                    <h3>Add</h3>
+                </div>
+            </button>
+        </div>
+    </form>
+</section>
+{% endblock content %}

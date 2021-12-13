@@ -3,7 +3,13 @@
     border-radius: 20px;
     border-width: 7px;
     padding: 20px;
-
+}
+#container h1 {
+    margin: 8px;
+    font-family: MyVirgilWebFont;
+    font-size: 2em;
+    text-align: center;
+    text-decoration-line: underline;
 }
 
 #container > div > a {
