@@ -1,0 +1,21 @@
+
+    
+    <section id="appts-container">
+        <div class="headings">
+            <div class="col col1">{{all_appts[0].get_headings()[0]}}</div>
+            <div class="col col2">{{all_appts[0].get_headings()[1]}}</div>  
+            <div class="col col3">{{all_appts[0].get_headings()[2]}}</div> 
+            <div class="col col4">{{all_appts[0].get_headings()[3]}}</div>
+        </div>
+    
+        {% for appt in all_appts %}
+            <div class="appt-row">
+                <div class="col col1">{{appt.appt_date}}</div>
+                <div class="col col2">{{appt.animal.get_name()}}</div>  
+                <div class="col col3">{{appt.note_text}}</div> 
+                <div class="col col4">{{appt.vet.get_name()}}</div>
+            </div>
+        {% endfor %}
+    </section>
+    
+    

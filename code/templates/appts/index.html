@@ -1,19 +1,7 @@
 {% extends "base.html" %}
+
 {% block content %}
 
-    {% block appts %}
-    
-    {% for i in range(all_appts[0].get_headings()|length) %}
-        {{all_appts[0].get_headings()[i]}}
-    {% endfor %}
-    
-    {% for appt in all_appts %}
-        {{appt.appt_date}}
-        {{appt.animal.get_name()}}
-        {{appt.note_text}}
-        {{appt.vet.get_name()}}
-    {% endfor %}
-
-    {% endblock appts %}
+{% include 'appts/appointments.html' %}
 
 {% endblock %}
