@@ -11,9 +11,9 @@ header {
   #header-container{
       display: flex;
       flex-wrap: nowrap;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-end;
-      width: 70%;
+      width: 100%;
       height: fit-content;
       margin: auto;
   }
@@ -23,7 +23,12 @@ header {
     font-size: 1.5em;
     color: rgb(0, 0, 0);
     margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 5px;  
+  }
+
+  #left-text-container {
+    width: fit-content;
+    margin-right: 30px;
   }
 
   #left-text-container > h1 {
@@ -31,6 +36,7 @@ header {
     font-size: 6em;
     color: rgb(0, 0, 0);
     margin: 0;
+    text-align: right;
   }
 
   #logo-container {
@@ -42,5 +48,6 @@ header {
 
   #right-container {
     display: inline-block;
+    justify-items: self-start;
     align-items: flex-end;
   }

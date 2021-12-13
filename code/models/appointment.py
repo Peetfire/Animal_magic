@@ -21,3 +21,6 @@ class Appointment:
 	def get_id(self):
 		return self.id
 
+	def get_headings(self):
+		return ["Appointment Date", "Animal Name", "Notes", "Vet"]
+

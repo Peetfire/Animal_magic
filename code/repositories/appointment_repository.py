@@ -28,7 +28,7 @@ def select_all():
         vet = vet_repo.select(result['vet_id'])
         
         animal = animal_repo.select(result['animal_id'])
-        appt = Appointment(result['note_text'], result['appt_date'], animal, vet, result['id'])
+        appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
         appts.append(appt)
     return appts
 
