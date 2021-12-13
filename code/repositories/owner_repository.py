@@ -42,6 +42,10 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM owners"
     run_sql(sql)
-# Delete id
 
+# Delete id
+def delete(id):
+    sql = "DELETE FROM owners WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 # Update 

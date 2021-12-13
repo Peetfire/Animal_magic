@@ -49,6 +49,7 @@ transform: translateY(4px);
   padding: 2px;
   margin: 5px;
   font-size: 1em;
+  color: grey;
   background-color: white;
   border: none;
   border-radius: 20px;
@@ -75,6 +76,9 @@ transform: translateY(4px);
   display: flex;
   justify-items: center;
   align-items: center;
+}
+.small-button > #button-content > h3 {
+  margin: 10px;
 }
 
 .small-button-row {

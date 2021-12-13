@@ -48,5 +48,8 @@ def delete_all():
     run_sql(sql)
 
 # Delete id
-
+def delete(id):
+    sql = "DELETE FROM appointments WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 # Update 

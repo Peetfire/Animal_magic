@@ -1,81 +1,83 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <section id="content-container">
-        <h1>Appointments</h1>
-        <form >
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/add_button.png">
-                    <h3>Add Appointment</h3>
-                </div>
-            </button>
-        </form>
-        <form action="/appts" method="GET">
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/view_button.png">
-                    <h3>View Appointments</h3>
-                </div>
-            </button>
-        </form>
-    </section>
-    <section id="content-container">
-        <h1>The Animals</h1>
-        <form>
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/add_button.png">
-                    <h3>Add New Animal</h3>
-                </div> 
-            </button>
-        </form>
-        <form action="/animals" method="GET">
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/view_button.png">
-                    <h3>View All Animals</h3>
-                </div>
-            </button>
-        </form>  
-    </section>
-    <section id="content-container">
-        <h1>Owners</h1>
-        <form>
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/add_button.png">
-                    <h3>Add An Owner</h3>
-                </div>
-            </button>
-        </form>
-        <form action="/owners" method="GET">
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/view_button.png">
-                    <h3>View All Owners</h3>
-                </div>
-            </button>
-        </form>
-    </section>
-    <section id="content-container">
-        <h1>The Vets</h1>
-        <form action="/vets/add" method="GET">
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/add_button.png">
-                    <h3>Add New Vet</h3>
-                </div>
-            </button>
-        </form>
-        <form action="/vets" method="GET">
-            <button class="big-button">
-                <div id="button-content">
-                    <img src="../static/img/icons/view_button.png">
-                    <h3>View All Vets</h3>
-                </div>
-            </button>
-        </form>
-    </section>
+    <div id="container">
+        <section id="home-container">
+            <h1>Appointments</h1>
+            <form >
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/add_button.png">
+                        <h3>Add Appointment</h3>
+                    </div>
+                </button>
+            </form>
+            <form action="/appts" method="GET">
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/view_button.png">
+                        <h3>View Appointments</h3>
+                    </div>
+                </button>
+            </form>
+        </section>
+        <section id="home-container">
+            <h1>The Animals</h1>
+            <form>
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/add_button.png">
+                        <h3>Add New Animal</h3>
+                    </div> 
+                </button>
+            </form>
+            <form action="/animals" method="GET">
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/view_button.png">
+                        <h3>View All Animals</h3>
+                    </div>
+                </button>
+            </form>  
+        </section>
+        <section id="home-container">
+            <h1>Owners</h1>
+            <form>
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/add_button.png">
+                        <h3>Add An Owner</h3>
+                    </div>
+                </button>
+            </form>
+            <form action="/owners" method="GET">
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/view_button.png">
+                        <h3>View All Owners</h3>
+                    </div>
+                </button>
+            </form>
+        </section>
+        <section id="home-container">
+            <h1>The Vets</h1>
+            <form action="/vets/add" method="GET">
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/add_button.png">
+                        <h3>Add New Vet</h3>
+                    </div>
+                </button>
+            </form>
+            <form action="/vets" method="GET">
+                <button class="big-button">
+                    <div id="button-content">
+                        <img src="../static/img/icons/view_button.png">
+                        <h3>View All Vets</h3>
+                    </div>
+                </button>
+            </form>
+        </section>
+    </div>
+    
 
 {% endblock %}

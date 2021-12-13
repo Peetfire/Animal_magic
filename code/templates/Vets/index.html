@@ -1,16 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="container">
-    <div class="headings vet-headings">
-        <div class="vet-col1">{{all_vets[0].get_headings()[0]}}</div>
-
-    </div>
-
-    {% for vet in all_vets %}
-        <div class="row vet-row">
-            <a href="/vets/{{ vet.get_id() }}"><div class="vet-col1">{{vet.get_name()}}</div></a>
+<div class="content-header"><h1>View All Vets</h1></div>
+<div id="container">
+    <section id="content-container">
+        <div class="headings vet-headings">
+            <div class="vet-col1">{{all_vets[0].get_headings()[0]}}</div>
+    
         </div>
-    {% endfor %}
-</section>
+    
+        {% for vet in all_vets %}
+            <div class="row vet-row">
+                <a href="/vets/{{ vet.get_id() }}"><div class="vet-col1">{{vet.get_name()}}</div></a>
+            </div>
+        {% endfor %}
+        <div class="small-button-row">
+            <form action="/vets/add" method="GET">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/add_button.png">
+                        <h3>Add New Vet</h3>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </section>
+</div>
+
 {% endblock content %}

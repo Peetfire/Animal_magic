@@ -1,21 +1,33 @@
-
-    
-    <section id="container">
-        <div class="headings appt-headings">
-            <div class="appt-col1">{{all_appts[0].get_headings()[0]}}</div>
-            <div class="appt-col2">{{all_appts[0].get_headings()[1]}}</div>  
-            <div class="appt-col3">{{all_appts[0].get_headings()[2]}}</div> 
-            <div class="appt-col4">{{all_appts[0].get_headings()[3]}}</div>
-        </div>
-    
-        {% for appt in all_appts %}
-            <div class="row appt-row">
-                <a href="/appts/{{ appt.get_id() }}"><div class="appt-col1">{{appt.appt_date}}</div></a>
-                <div class="appt-col2">{{appt.animal.get_name()}}</div>  
-                <div class="appt-col3">{{appt.note_text}}</div> 
-                <div class="appt-col4">{{appt.vet.get_name()}}</div>
+    <div class="content-header"><h1>View All Appointments</h1></div>
+    <div id="container">
+        <section id="content-container">
+            <div class="headings appt-headings">
+                <div class="appt-col1">{{all_appts[0].get_headings()[0]}}</div>
+                <div class="appt-col2">{{all_appts[0].get_headings()[1]}}</div>  
+                <div class="appt-col3">{{all_appts[0].get_headings()[2]}}</div> 
+                <div class="appt-col4">{{all_appts[0].get_headings()[3]}}</div>
             </div>
-        {% endfor %}
-    </section>
+        
+            {% for appt in all_appts %}
+                <div class="row appt-row">
+                    <a href="/appts/{{ appt.get_id() }}"><div class="appt-col1">{{appt.appt_date}}</div></a>
+                    <div class="appt-col2">{{appt.animal.get_name()}}</div>  
+                    <div class="appt-col3">{{appt.note_text}}</div> 
+                    <div class="appt-col4">{{appt.vet.get_name()}}</div>
+                </div>
+            {% endfor %}
+            <div class="small-button-row">
+                <form action="/appts/add" method="GET">
+                    <button class="small-button">
+                        <div id="button-content">
+                            <img src="../../static/img/icons/add_button.png">
+                            <h3>Add New Appointment</h3>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+    
     
     

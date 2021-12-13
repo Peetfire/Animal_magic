@@ -1,13 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content-header"><h1>Add New Vet</h1></div>
+<div class="content-header"><h1>Add New Owner</h1></div>
 <div id="container">
     <section id="content-container">
-        <form action="/vets" method="POST">
+        <form action="/owners" method="POST">
             <div class="headings">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter Name">
+            </div>
+            <div class="headings">
+                <label for="email">email:</label>
+                <input type="text" id="email" name="email" placeholder="Enter Email">
+            </div>
+            <div class="headings">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter Phone Number">
             </div>
             <div class="small-button-row">
                 <button class="small-button" type="submit">

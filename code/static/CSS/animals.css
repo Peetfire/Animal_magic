@@ -1,9 +1,9 @@
 .animal-headings {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
 }
 
 .animal-row {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
     align-items: center;
 }
 

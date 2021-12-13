@@ -39,6 +39,11 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM vets"
     run_sql(sql)
+
 # Delete id
+def delete(id):
+    sql = "DELETE FROM vets WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 # Update 

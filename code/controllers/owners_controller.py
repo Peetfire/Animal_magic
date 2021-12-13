@@ -1,4 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+from models.owner import Owner
 
 # import models and repos
 # from models.vet import Vet
@@ -22,12 +23,21 @@ def owners():
 def view_owner(id):
     owner = owner_repo.select(id)
     return render_template("owners/view.html", owner=owner)
+
 # NEW
-
-
+@owners_blueprint.route("/owners/add")
+def new_owner():
+    return render_template("/owners/add.html")
 
 # CREATE
-
+@owners_blueprint.route("/owners", methods=["POST"])
+def create_owner():
+    name = request.form['name']
+    email = request.form['email']
+    phone = request.form['phone']
+    owner = Owner(name, email, phone)
+    owner_repo.save(owner)
+    return redirect("/owners")
 
 
 # EDIT
@@ -40,3 +50,7 @@ def view_owner(id):
 
 
 # DELETE
+@owners_blueprint.route("/owners/<id>/delete", methods=['POST'])
+def delete_owner(id):
+    owner_repo.delete(id)
+    return redirect("/owners")

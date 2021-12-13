@@ -1,54 +1,56 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="container">
-    <div class="view-img">
-        <img src="../../static/img/icons/user.png">
-    </div> 
-    <div class="view-row">
-        <div class="headings">{{animal.get_headings()[0]}}:</div>
-        <div class="view-val">{{animal.get_name()}}</div>
-    </div>
-    <div class="view-row">
-        <div class="headings">{{animal.get_headings()[1]}}:</div>
-        <div class="view-val">{{animal.get_species()}}</div>    
-    </div>
+<div class="content-header"><h1>View Animal</h1></div>
+<div id="container">
+    <section id="content-container">
+        <div class="view-img">
+            <img src="../../static/img/icons/user.png">
+        </div> 
+        <div class="view-row">
+            <div class="headings">{{animal.get_headings()[0]}}:</div>
+            <div class="view-val">{{animal.get_name()}}</div>
+        </div>
+        <div class="view-row">
+            <div class="headings">{{animal.get_headings()[1]}}:</div>
+            <div class="view-val">{{animal.get_species()}}</div>    
+        </div>
+        
+        <div class="view-row">
+            <div class="headings">{{animal.get_headings()[2]}}:</div>
+            <div class="view-val">{{animal.get_dob()}}</div>    
+        </div>
+        
+        <div class="view-row">
+            <div class="headings">{{animal.get_headings()[3]}}:</div>
+            <div class="view-val">{{animal.get_owner()}}</div>    
+        </div>
+        
+        <div class="view-row">
+            <div class="headings">{{animal.get_headings()[4]}}:</div>
+            <div class="view-val">{{animal.get_vet()}}</div>    
+        </div>
     
-    <div class="view-row">
-        <div class="headings">{{animal.get_headings()[2]}}:</div>
-        <div class="view-val">{{animal.get_dob()}}</div>    
-    </div>
-    
-    <div class="view-row">
-        <div class="headings">{{animal.get_headings()[3]}}:</div>
-        <div class="view-val">{{animal.get_owner()}}</div>    
-    </div>
-    
-    <div class="view-row">
-        <div class="headings">{{animal.get_headings()[4]}}:</div>
-        <div class="view-val">{{animal.get_vet()}}</div>    
-    </div>
+        <div class="small-button-row">
+            <form action="/animals" method="GET">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/edit.png">
+                        <h3>Edit</h3>
+                    </div>
+                </button>
+            </form>
+            <form action="/animals/{{ animal.id }}/delete" method="POST">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/delete.png">
+                        <h3>Delete</h3>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </section>
+</div>
 
-    <div class="small-button-row">
-        <form action="/animals" method="GET">
-            <button class="small-button">
-                <div id="button-content">
-                    <img src="../../static/img/icons/edit.png">
-                    <h3>Edit</h3>
-                </div>
-            </button>
-        </form>
-        <form action="/animals" method="GET">
-            <button class="small-button">
-                <div id="button-content">
-                    <img src="../../static/img/icons/delete.png">
-                    <h3>Delete</h3>
-                </div>
-            </button>
-        </form>
-    </div>
-
-    
-</section>
     
 {% endblock content %}

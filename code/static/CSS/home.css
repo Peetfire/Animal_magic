@@ -1,6 +1,6 @@
 
 
-#content-container {
+#home-container {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     border-width: 6px;
@@ -13,7 +13,7 @@
     width: 400px;
 }
 
-#content-container > h1 {
+#home-container > h1 {
     margin: 8px;
     font-family: MyVirgilWebFont;
     font-size: 2em;

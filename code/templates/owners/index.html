@@ -1,19 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="container">
-    <div class="headings owner-headings">
-        <div class="owner-col1">{{all_owners[0].get_headings()[0]}}</div>
-        <div class="owner-col2">{{all_owners[0].get_headings()[1]}}</div>
-        <div class="owner-col3">{{all_owners[0].get_headings()[2]}}</div>
-    </div>
-
-    {% for owner in all_owners %}
-        <div class="row owner-row">
-            <a href="/owners/{{ owner.get_id() }}"><div class="owner-col1">{{owner.get_name()}}</div></a>
-            <div class="owner-col2">{{owner.get_email()}}</div>
-            <div class="owner-col3">{{owner.get_phone()}}</div>
+<div class="content-header"><h1>View All Owners</h1></div>
+<div id="container">
+    <section id="content-container">
+        <div class="headings owner-headings">
+            <div class="owner-col1">{{all_owners[0].get_headings()[0]}}</div>
+            <div class="owner-col2">{{all_owners[0].get_headings()[1]}}</div>
+            <div class="owner-col3">{{all_owners[0].get_headings()[2]}}</div>
         </div>
-    {% endfor %}
-</section>
+    
+        {% for owner in all_owners %}
+            <div class="row owner-row">
+                <a href="/owners/{{ owner.get_id() }}"><div class="owner-col1">{{owner.get_name()}}</div></a>
+                <div class="owner-col2">{{owner.get_email()}}</div>
+                <div class="owner-col3">{{owner.get_phone()}}</div>
+            </div>
+        {% endfor %}
+        <div class="small-button-row">
+            <form action="/owners/add" method="GET">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/add_button.png">
+                        <h3>Add New Owner</h3>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </section>
+</div>
+
 {% endblock content %}
