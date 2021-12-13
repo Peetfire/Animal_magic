@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="container">
+    <div class="view-img">
+        <img src="../../static/img/icons/user.png">
+    </div> 
+    <div class="view-row">
+        <div class="headings">{{vet.get_headings()[0]}}:</div>
+        <div class="view-val">{{vet.get_name()}}</div>
+    </div>
+
+    <div class="edit-del-row">
+        <form action="/vets" method="GET">
+            <button class="button">
+                <div id="button-content">
+                    <img src="../../static/img/icons/edit.png">
+                    <h3>Edit</h3>
+                </div>
+            </button>
+        </form>
+        <form action="/vet" method="GET">
+            <button class="button">
+                <div id="button-content">
+                    <img src="../../static/img/icons/delete.png">
+                    <h3>Delete</h3>
+                </div>
+            </button>
+        </form>
+    </div>
+    
+</section>
+    
+{% endblock content %}

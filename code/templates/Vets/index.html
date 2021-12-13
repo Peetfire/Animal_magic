@@ -9,7 +9,7 @@
 
     {% for vet in all_vets %}
         <div class="row vet-row">
-            <div class="vet-col1">{{vet.get_name()}}</div>
+            <a href="/vets/{{ vet.get_id() }}"><div class="vet-col1">{{vet.get_name()}}</div></a>
         </div>
     {% endfor %}
 </section>

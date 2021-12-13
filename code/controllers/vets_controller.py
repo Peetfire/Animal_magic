@@ -16,6 +16,12 @@ vets_blueprint = Blueprint("vets", __name__)
 def vets():
     vets = vet_repo.select_all()
     return render_template("vets/index.html", all_vets = vets)
+
+# VIEW
+@vets_blueprint.route("/vets/<id>")
+def view_vet(id):
+    vet = vet_repo.select(id)
+    return render_template("/vets/view.html", vet=vet)
 # NEW
 
 
