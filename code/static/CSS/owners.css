@@ -1,0 +1,21 @@
+.owner-headings {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.owner-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.owner-col1{
+    padding: 3px;
+    text-align: center;
+}
+.owner-col2{
+    padding: 3px;
+    text-align: center;
+}
+.owner-col3{
+    padding: 3px;
+    text-align: center;
+}

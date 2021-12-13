@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="container">
+    <div class="headings owner-headings">
+        <div class="owner-col1">{{all_owners[0].get_headings()[0]}}</div>
+        <div class="owner-col2">{{all_owners[0].get_headings()[1]}}</div>
+        <div class="owner-col3">{{all_owners[0].get_headings()[2]}}</div>
+    </div>
+
+    {% for owner in all_owners %}
+        <div class="row owner-row">
+            <div class="owner-col1">{{owner.get_name()}}</div>
+            <div class="owner-col2">{{owner.get_email()}}</div>
+            <div class="owner-col3">{{owner.get_phone()}}</div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock content %}
