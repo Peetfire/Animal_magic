@@ -17,6 +17,13 @@ def animals():
     animals = animal_repo.select_all()
     return render_template("animals/index.html", all_animals=animals)
 
+# VIEW
+@animals_blueprint.route("/animals/<id>")
+def view_animal(id):
+    animal = animal_repo.select(id)
+    return render_template("animals/view.html", animal=animal)
+
+
 # NEW
 
 

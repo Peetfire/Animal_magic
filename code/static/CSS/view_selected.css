@@ -1,0 +1,12 @@
+.view-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.view-val {
+    font-family: MyVirgilWebFont;
+    font-size: 20px;
+    word-wrap: break-word;
+    color: grey;
+    display: grid;
+}
