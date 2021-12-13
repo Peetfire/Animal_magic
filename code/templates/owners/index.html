@@ -10,7 +10,7 @@
 
     {% for owner in all_owners %}
         <div class="row owner-row">
-            <div class="owner-col1">{{owner.get_name()}}</div>
+            <a href="/owners/{{ owner.get_id() }}"><div class="owner-col1">{{owner.get_name()}}</div></a>
             <div class="owner-col2">{{owner.get_email()}}</div>
             <div class="owner-col3">{{owner.get_phone()}}</div>
         </div>

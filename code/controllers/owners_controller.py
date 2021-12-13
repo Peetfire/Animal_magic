@@ -17,6 +17,11 @@ def owners():
     owners = owner_repo.select_all()
     return render_template("owners/index.html", all_owners = owners)
 
+# VIEW
+@owners_blueprint.route("/owners/<id>")
+def view_owner(id):
+    owner = owner_repo.select(id)
+    return render_template("owners/view.html", owner=owner)
 # NEW
 
 
