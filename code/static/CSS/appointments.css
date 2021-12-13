@@ -1,25 +1,8 @@
-#appts-container {
-    border-style: double;
-    border-radius: 20px;
-    border-width: 7px;
-    padding: 20px;
 
-}
-
-.headings {
-    font-family: MyVirgilWebFont;
-    font-size: 22px;
-    font-weight: bolder;
-    word-wrap: break-word;
-    display: grid;
+.appt-headings {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .appt-row {
-    font-family: MyVirgilWebFont;
-    font-size: 20px;
-    word-wrap: break-word;
-    color: grey;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }

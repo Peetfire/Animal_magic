@@ -17,10 +17,13 @@ class Animal:
 		return self.dob
 
 	def get_owner(self):
-		return self.owner
+		return self.owner.name
 
 	def get_vet(self):
-		return self.vet
+		return self.vet.name
 
 	def get_id(self):
 		return self.id
+
+	def get_headings(self):
+		return ["Name", "Species", "DoB", "Owner", "Vet"]

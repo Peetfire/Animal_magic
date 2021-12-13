@@ -1,5 +1,4 @@
 from flask import Blueprint, Flask, redirect, render_template, request
-from models.appointment import *
 
 # import models and repos
 # from models.vet import Vet
@@ -16,7 +15,6 @@ appointments_blueprint = Blueprint("appointments", __name__)
 @appointments_blueprint.route("/appts")
 def appointments():
     appts = appt_repo.select_all()  
-    headings  = appts[0].get_headings()
     return render_template("appts/index.html", all_appts=appts)
 
 # NEW
