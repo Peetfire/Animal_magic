@@ -17,6 +17,13 @@ def appointments():
     appts = appt_repo.select_all()  
     return render_template("appts/index.html", all_appts=appts)
 
+# VIEW
+@appointments_blueprint.route("/appts/<id>")
+def view_appt(id):
+    appt = appt_repo.select(id)
+    return render_template("appts/view.html", appt=appt)
+
+
 # NEW
 
 

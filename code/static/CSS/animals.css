@@ -7,20 +7,6 @@
     align-items: center;
 }
 
-.animal-row > a {
-    color: grey;
-    border-radius: 20px;
-}
-
-.animal-row > a:hover {
-    color: black;
-}
-
-.animal-row > a:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(2px);
-  }
-
 .animal-col1{
     padding: 3px;
     text-align: center;

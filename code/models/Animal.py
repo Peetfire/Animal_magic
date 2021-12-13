@@ -17,10 +17,10 @@ class Animal:
 		return self.dob
 
 	def get_owner(self):
-		return self.owner.name
+		return self.owner.get_name()
 
 	def get_vet(self):
-		return self.vet.name
+		return self.vet.get_name()
 
 	def get_id(self):
 		return self.id

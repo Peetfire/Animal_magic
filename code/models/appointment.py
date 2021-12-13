@@ -13,10 +13,10 @@ class Appointment:
 		return self.appt_date
 
 	def get_vet(self):
-		return self.vet
+		return self.vet.get_name()
 
 	def get_animal(self):
-		return self.animal
+		return self.animal.get_name()
 
 	def get_id(self):
 		return self.id

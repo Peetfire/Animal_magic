@@ -34,12 +34,12 @@ def select_all():
 
 # Select id
 def select(id):
-    sql = "SELECT * FROM appointmnets WHERE id=%s"
+    sql = "SELECT * FROM appointments WHERE id=%s"
     values = [id]
     result = run_sql(sql, values)[0]
     vet = vet_repo.select(result['vet_id'])
     animal = animal_repo.select(result['animal_id'])
-    appt = Appointment(result['note_text'], result['appt_date'], animal, vet, result['id'])
+    appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
     return appt
 
 # Delete All
