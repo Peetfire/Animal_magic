@@ -46,12 +46,25 @@ def create_appt():
 
 
 # EDIT
-
-
+@appointments_blueprint.route("/appts/<id>/edit")
+def edit_appt(id):
+    appt = appt_repo.select(id)
+    animals = animal_repo.select_all()
+    vets = vet_repo.select_all()
+    return render_template("/appts/edit.html", appt=appt, animals=animals, vets=vets)
 
 # UPDATE
-
-
+@appointments_blueprint.route("/appts/<id>", methods=['POST'])
+def update_appt(id):
+    appt_date = request.form['date']
+    animal_id = request.form['animal_id']
+    vet_id = request.form['vet_id']
+    note_text = request.form['note_text']
+    vet = vet_repo.select(vet_id)
+    animal = animal_repo.select(animal_id)
+    appt = Appointment(note_text, appt_date, vet, animal, id)
+    appt_repo.update(appt)
+    return redirect("/appts")
 
 
 # DELETE

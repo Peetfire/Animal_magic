@@ -52,4 +52,9 @@ def delete(id):
     sql = "DELETE FROM appointments WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
 # Update 
+def upddate(appt):
+    sql = "UPDATE appointments SET (appt_date, note_text, animal_id, vet_id) = (%s, %s, %s, %s) WHERE id = %s"
+    values = [appt.get_appt_date(), appt.get_note_text(), appt.animal.get_id(), appt.vet.get_id()]
+    run_sql(sql, values)
