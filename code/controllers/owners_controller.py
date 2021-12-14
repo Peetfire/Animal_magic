@@ -1,3 +1,4 @@
+from os import name
 from flask import Blueprint, Flask, redirect, render_template, request
 from models.owner import Owner
 
@@ -41,11 +42,20 @@ def create_owner():
 
 
 # EDIT
-
-
+@owners_blueprint.route("/owners/<id>/edit")
+def edit_owner(id):
+    owner = owner_repo.select(id)
+    return render_template("/owners/edit.html", owner=owner)
 
 # UPDATE
-
+@owners_blueprint.route("/owners/<id>", methods=['POST'])
+def update_owner(id):
+    name = request.form['name']
+    email = request.form['email']
+    phone = request.form['phone']
+    owner = Owner(name, email, phone, id)
+    owner_repo.update(owner)
+    return redirect("/owners")
 
 
 

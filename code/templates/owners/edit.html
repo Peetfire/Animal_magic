@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-header"><h1>Add New Owner</h1></div>
+<div id="container">
+    <section id="content-container">
+        <form action="/owners/{{owner.id}}" method="POST">
+            <div class="headings">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{owner.name}}">
+            </div>
+            <div class="headings">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" value="{{owner.email}}">
+            </div>
+            <div class="headings">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" value="{{owner.phone}}">
+            </div>
+            <div class="small-button-row">
+                <button class="small-button" type="submit">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/save_button.png">
+                        <h3>Update</h3>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </section>
+</div>
+
+{% endblock content %}
