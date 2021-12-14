@@ -1,45 +1,65 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="content-header"><h1>View All Owners</h1></div>
+<div class="content-header"><h1>View Owner</h1></div>
 <div id="container">
-    <section id="content-container">
-        <div class="view-img">
-            <img src="../../static/img/icons/user.png">
-        </div> 
-        <div class="view-row">
-            <div class="headings">{{owner.get_headings()[0]}}:</div>
-            <div class="view-val">{{owner.get_name()}}</div>
-        </div>
-        <div class="view-row">
-            <div class="headings">{{owner.get_headings()[1]}}:</div>
-            <div class="view-val">{{owner.get_email()}}</div>    
-        </div>
+    <div class="primary-container">
+        <div class="content-header"><h1>View Owner</h1></div>
+        <section id="content-container">
+            <div class="view-img">
+                <img src="../../static/img/icons/user.png">
+            </div> 
+            <div class="view-row">
+                <div class="headings">{{owner.get_headings()[0]}}:</div>
+                <div class="view-val">{{owner.get_name()}}</div>
+            </div>
+            <div class="view-row">
+                <div class="headings">{{owner.get_headings()[1]}}:</div>
+                <div class="view-val">{{owner.get_email()}}</div>    
+            </div>
+            
+            <div class="view-row">
+                <div class="headings">{{owner.get_headings()[2]}}:</div>
+                <div class="view-val">{{owner.get_phone()}}</div>    
+            </div>
         
-        <div class="view-row">
-            <div class="headings">{{owner.get_headings()[2]}}:</div>
-            <div class="view-val">{{owner.get_phone()}}</div>    
-        </div>
-    
-        <div class="small-button-row">
-            <form action="/owners/{{ owner.id }}/edit" method="GET">
-                <button class="small-button">
-                    <div id="button-content">
-                        <img src="../../static/img/icons/edit.png">
-                        <h3>Edit</h3>
-                    </div>
-                </button>
-            </form>
-            <form action="/owners/{{ owner.id }}/delete" method="POST">
-                <button class="small-button">
-                    <div id="button-content">
-                        <img src="../../static/img/icons/delete.png">
-                        <h3>Delete</h3>
-                    </div>
-                </button>
-            </form>
-        </div>
-    </section>
+            <div class="small-button-row">
+                <form action="/owners/{{ owner.id }}/edit" method="GET">
+                    <button class="small-button">
+                        <div id="button-content">
+                            <img src="../../static/img/icons/edit.png">
+                            <h3>Edit</h3>
+                        </div>
+                    </button>
+                </form>
+                <form action="/owners/{{ owner.id }}/delete" method="POST">
+                    <button class="small-button">
+                        <div id="button-content">
+                            <img src="../../static/img/icons/delete.png">
+                            <h3>Delete</h3>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </section>
+        <div class="content-header"><h1>{{owner.get_name().split()[0]}}'s Animals</h1></div>
+        <section id="content-container">
+            {% for animal in animals %}
+            <div class="view-row">
+                <div class="headings">{{animal.get_headings()[0]}}:</div>
+                <a href="/animals/{{animal.get_id()}}">{{animal.get_name()}}</a> 
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div class="secondary-container">
+        <div class="content-header"><h1>{{owner.get_name().split()[0]}}'s Appointments</h1></div>
+        {% for appt in appts %}
+        <section id="content-container">
+            {% include 'appts/selected_appt.html' %}
+        </section>
+        {% endfor %}
+    </div>
 </div>
 
     

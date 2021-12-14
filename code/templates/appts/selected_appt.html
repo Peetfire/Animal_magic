@@ -1,42 +1,18 @@
-<div class="content-header"><h1>View Appointment</h1></div>
-<div id="container">
-    <section id="content-container">
-        <div class="view-row">
-            <div class="headings">{{headings[0]}}:</div>
-            <div class="view-val">{{appt.get_appt_date()}}</div>
-        </div>
-        <div class="view-row">
-            <div class="headings">{{headings[1]}}:</div>
-            <div class="view-val">{{appt.get_animal()}}</div>    
-        </div>
-        
-        <div class="view-row">
-            <div class="headings">{{headings[2]}}:</div>
-            <div class="view-val">{{appt.get_note_text()}}</div>    
-        </div>
-        
-        <div class="view-row">
-            <div class="headings">{{headings[3]}}:</div>
-            <div class="view-val">{{appt.get_vet()}}</div>    
-        </div>
-        
-        <div class="small-button-row">
-            <form action="/appts/{{ appt.id }}/edit" method="GET">
-                <button class="small-button">
-                    <div id="button-content">
-                        <img src="../../static/img/icons/edit.png">
-                        <h3>Edit</h3>
-                    </div>
-                </button>
-            </form>
-            <form action="/appts/{{ appt.id }}/delete" method="POST">
-                <button class="small-button">
-                    <div id="button-content">
-                        <img src="../../static/img/icons/delete.png">
-                        <h3>Delete</h3>
-                    </div>
-                </button>
-            </form>
-        </div>
-    </section>
+<div class="view-row">
+    <div class="headings">{{appt.get_headings()[0]}}:</div>
+    <div class="view-val">{{appt.get_appt_date()}}</div>
+</div>
+<div class="view-row">
+    <div class="headings">{{appt.get_headings()[1]}}:</div>
+    <div class="view-val">{{appt.get_animal()}}</div>    
+</div>
+
+<div class="view-row">
+    <div class="headings">{{appt.get_headings()[2]}}:</div>
+    <div class="view-val">{{appt.get_note_text()}}</div>    
+</div>
+
+<div class="view-row">
+    <div class="headings">{{appt.get_headings()[3]}}:</div>
+    <div class="view-val">{{appt.get_vet()}}</div>    
 </div>

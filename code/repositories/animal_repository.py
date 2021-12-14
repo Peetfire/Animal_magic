@@ -28,7 +28,6 @@ def select_all():
     results = run_sql(sql)
     for result in results:
         vet = vet_repo.select(result['vet_id'])
-        
         owner = owner_repo.select(result['owner_id'])
         animal = Animal(result['name'], result['species'], result['dob'], owner, vet, result['id'])
         animals.append(animal)
@@ -60,3 +59,29 @@ def update(animal):
     sql = "UPDATE animals SET (name, species, dob, owner_id, vet_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
     values = [animal.get_name(), animal.get_species(), animal.get_dob(), animal.owner.get_id(), animal.vet.get_id(), animal.get_id()]
     run_sql(sql, values)
+
+# SELECT all animals of vet
+def select_vet_animals(vet):
+    animals = []
+    sql = "SELECT * FROM animals WHERE vet_id = %s"
+    values = [vet.id]
+    results = run_sql(sql, values)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        owner = owner_repo.select(result['owner_id'])
+        animal = Animal(result['name'], result['species'], result['dob'], owner, vet, result['id'])
+        animals.append(animal)
+    return animals
+
+# SELECT ALL for Owner
+def select_owner_animals(owner):
+    animals = []
+    sql = "SELECT * FROM animals WHERE owner_id = %s"
+    values = [owner.id]
+    results = run_sql(sql, values)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        owner = owner_repo.select(result['owner_id'])
+        animal = Animal(result['name'], result['species'], result['dob'], owner, vet, result['id'])
+        animals.append(animal)
+    return animals

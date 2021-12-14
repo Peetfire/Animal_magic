@@ -1,7 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="content-header"><h1>View Appointment</h1></div>
+<div id="container">
+    <section id="content-container">
+        
+        {% include 'appts/selected_appt.html' %}
 
-{% include 'appts/selected_appt.html' %}
+        <div class="small-button-row">
+            <form action="/appts/{{ appt.id }}/edit" method="GET">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/edit.png">
+                        <h3>Edit</h3>
+                    </div>
+                </button>
+            </form>
+            <form action="/appts/{{ appt.id }}/delete" method="POST">
+                <button class="small-button">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/delete.png">
+                        <h3>Delete</h3>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </section>
+</div>
 
 {% endblock %}

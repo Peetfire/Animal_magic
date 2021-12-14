@@ -26,7 +26,6 @@ def select_all():
     results = run_sql(sql)
     for result in results:
         vet = vet_repo.select(result['vet_id'])
-        
         animal = animal_repo.select(result['animal_id'])
         appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
         appts.append(appt)
@@ -58,3 +57,43 @@ def upddate(appt):
     sql = "UPDATE appointments SET (appt_date, note_text, animal_id, vet_id) = (%s, %s, %s, %s) WHERE id = %s"
     values = [appt.get_appt_date(), appt.get_note_text(), appt.animal.get_id(), appt.vet.get_id()]
     run_sql(sql, values)
+
+# SELECT ALL for VET
+def select_vet_appts(vet):
+    appts = []
+    sql = "SELECT * FROM appointments WHERE vet_id = %s"
+    values = [vet.id]
+    results = run_sql(sql, values)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        animal = animal_repo.select(result['animal_id'])
+        appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
+        appts.append(appt)
+    return appts
+
+# SELECT ALL for Owner
+def select_owner_appts(owner):
+    appts = []
+    sql = "SELECT appointments.* FROM appointments INNER JOIN animals ON animals.id = appointments.animal_id WHERE animals.owner_id = %s"
+    values = [owner.id]
+    results = run_sql(sql, values)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        animal = animal_repo.select(result['animal_id'])
+        appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
+        appts.append(appt)
+    return appts
+
+# SELECT ALL for Animal
+def select_animal_appts(animal):
+    appts = []
+    sql = "SELECT appointments.* FROM appointments WHERE animal_id =  %s"
+    values = [animal.id]
+    results = run_sql(sql, values)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        animal = animal_repo.select(result['animal_id'])
+        appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
+        appts.append(appt)
+    return appts
+

@@ -11,7 +11,7 @@
 #container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 #content-container {
     border-style: double;
@@ -19,6 +19,7 @@
     border-width: 7px;
     padding: 20px;
     padding-bottom: 10px;
+    margin: 10px;
     width: fit-content;
 }
 #content-container h1 {
@@ -66,4 +67,16 @@ select {
     word-wrap: break-word;
     color: grey;
     display: grid;
+}
+
+.primary-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.secondary-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
 }

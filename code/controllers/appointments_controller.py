@@ -1,8 +1,9 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+from models.animal import Animal
 from models.appointment import Appointment
 
 # import models and repos
-# from models.vet import Vet
+from models.vet import Vet
 import repositories.vet_repository as vet_repo
 import repositories.animal_repository as animal_repo
 import repositories.appointment_repository as appt_repo
@@ -16,17 +17,17 @@ appointments_blueprint = Blueprint("appointments", __name__)
 @appointments_blueprint.route("/appts")
 def appointments():
     appts = appt_repo.select_all()  
-    dummy_appt = Appointment("Dummy", "Appointmet")
-    headings = dummy_appt.get_headings()
-    return render_template("appts/index.html", all_appts=appts, headings=headings)
+    if len(appts) == 0:
+        appts = [Appointment(" ", " ", Animal(" ", " ", " "), Vet(" "))]
+    return render_template("appts/index.html", all_appts=appts)
 
 # VIEW
 @appointments_blueprint.route("/appts/<id>")
 def view_appt(id):
     appt = appt_repo.select(id)
-    dummy_appt = Appointment("Dummy", "Appointmet")
-    headings = dummy_appt.get_headings()
-    return render_template("appts/view.html", appt=appt, headings=headings)
+    if appt == None:
+        appt = Appointment(" ", " ", Animal(" ", " ", " "), Vet(" "))
+    return render_template("appts/view.html", appt=appt)
 
 # NEW
 @appointments_blueprint.route("/appts/add")
@@ -40,10 +41,9 @@ def new_appt():
 def create_appt():
     appt_date = request.form['date']
     animal_id = request.form['animal_id']
-    vet_id = request.form['vet_id']
     note_text = request.form['note_text']
-    vet = vet_repo.select(vet_id)
     animal = animal_repo.select(animal_id)
+    vet = animal.vet
     appt = Appointment(note_text, appt_date, vet, animal)
     appt_repo.save(appt)
     return redirect("/appts")

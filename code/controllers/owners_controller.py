@@ -1,12 +1,13 @@
 from os import name
+from re import A
 from flask import Blueprint, Flask, redirect, render_template, request
 from models.owner import Owner
 
 # import models and repos
 # from models.vet import Vet
 # import repositories.vet_repository as vet_repo
-# import repositories.animal_repository as animal_repo
-# import repositories.appointment_repository as appt_repo
+import repositories.animal_repository as animal_repo
+import repositories.appointment_repository as appt_repo
 import repositories.owner_repository as owner_repo
 
 
@@ -17,13 +18,19 @@ owners_blueprint = Blueprint("owners", __name__)
 @owners_blueprint.route("/owners")
 def owners():
     owners = owner_repo.select_all()
+    if len(owners) == 0:
+        owners = [Owner(" ", " ", " ")]
     return render_template("owners/index.html", all_owners = owners)
 
 # VIEW
 @owners_blueprint.route("/owners/<id>")
 def view_owner(id):
     owner = owner_repo.select(id)
-    return render_template("owners/view.html", owner=owner)
+    if owner == None:
+        owner = Owner(" ", " ", " ")
+    appts = appt_repo.select_owner_appts(owner)
+    animals = animal_repo.select_owner_animals(owner)
+    return render_template("owners/view.html", owner=owner, appts=appts, animals=animals)
 
 # NEW
 @owners_blueprint.route("/owners/add")

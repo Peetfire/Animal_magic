@@ -4,10 +4,10 @@ from models.animal import Animal
 from models.owner import Owner
 
 # import models and repos
-# from models.vet import Vet
+from models.vet import Vet
 import repositories.vet_repository as vet_repo
 import repositories.animal_repository as animal_repo
-# import repositories.appointment_repository as appt_repo
+import repositories.appointment_repository as appt_repo
 import repositories.owner_repository as owner_repo
 
 
@@ -18,17 +18,18 @@ animals_blueprint = Blueprint("animals", __name__)
 @animals_blueprint.route("/animals")
 def animals():
     animals = animal_repo.select_all()
-    dummy_animal = Animal("dummy", "animal", "here")
-    headings = dummy_animal.get_headings()
-    return render_template("animals/index.html", all_animals=animals, headings=headings)
+    if len(animals) == 0:
+        animals = [Animal(" ", " ", " ", Owner(" ", " ", " "), Vet(" "))]
+    return render_template("animals/index.html", all_animals=animals)
 
 # VIEW
 @animals_blueprint.route("/animals/<id>")
 def view_animal(id):
     animal = animal_repo.select(id)
-    dummy_animal = Animal("dummy", "animal", "here")
-    headings = dummy_animal.get_headings()
-    return render_template("animals/view.html", animal=animal, headings=headings)
+    if animal == None:
+        animal = Animal(" ", " ", " ", Owner(" ", " ", " "), Vet(" "))
+    appts = appt_repo.select_animal_appts(animal)
+    return render_template("animals/view.html", animal=animal, appts = appts)
 
 # NEW
 @animals_blueprint.route("/animals/add")
