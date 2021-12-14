@@ -37,12 +37,19 @@ def create_vet():
     return redirect("/vets")
 
 # EDIT
-
-
+@vets_blueprint.route("/vets/<id>/edit")
+def edit_vet(id):
+    vet = vet_repo.select(id)
+    return render_template("/vets/edit.html", vet = vet)
 
 # UPDATE
-
-
+@vets_blueprint.route("/vets/<id>", methods = ['POST'])
+def update_vet(id):
+    name = request.form['name']
+    vet_id = id
+    vet = Vet(name, vet_id)
+    vet_repo.update(vet)
+    return redirect("/vets")
 
 
 # DELETE

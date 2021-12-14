@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content-header"><h1>Edit Vet</h1></div>
+<div id="container">
+    <section id="content-container">
+        <form action="/vets/{{ vet.id }}" method="POST">
+            <div class="headings">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" value="{{ vet.name }}">
+            </div>
+            <div class="small-button-row">
+                <button class="small-button" type="submit">
+                    <div id="button-content">
+                        <img src="../../static/img/icons/save_button.png">
+                        <h3>Update</h3>
+                    </div>
+                </button>
+            </div>
+        </form>
+    </section>
+</div>
+
+{% endblock content %}
