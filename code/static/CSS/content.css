@@ -41,8 +41,17 @@
 #content-container > div > a:active {
     box-shadow: 0 2px #666;
     transform: translateY(2px);
-  }
-
+}
+input[type=text] {
+    padding: 2px;
+    margin: 4px;
+    font-family: MyVirgilWebFont;
+}
+select {
+    padding: 2px;
+    margin: 4px;
+    font-family: MyVirgilWebFont;
+}
 .headings {
     font-family: MyVirgilWebFont;
     font-size: 22px;

@@ -16,13 +16,17 @@ appointments_blueprint = Blueprint("appointments", __name__)
 @appointments_blueprint.route("/appts")
 def appointments():
     appts = appt_repo.select_all()  
-    return render_template("appts/index.html", all_appts=appts)
+    dummy_appt = Appointment("Dummy", "Appointmet")
+    headings = dummy_appt.get_headings()
+    return render_template("appts/index.html", all_appts=appts, headings=headings)
 
 # VIEW
 @appointments_blueprint.route("/appts/<id>")
 def view_appt(id):
     appt = appt_repo.select(id)
-    return render_template("appts/view.html", appt=appt)
+    dummy_appt = Appointment("Dummy", "Appointmet")
+    headings = dummy_appt.get_headings()
+    return render_template("appts/view.html", appt=appt, headings=headings)
 
 # NEW
 @appointments_blueprint.route("/appts/add")
