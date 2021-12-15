@@ -13,18 +13,22 @@
             </form>
         </div>
         <div class="sort-row">
-            <form>
-                <label for="">Sort by:</label>
-                <select name="animal_type" id="animal_type">
-                    {% for vet in vets %}
-                    <option value="{{ animal_type }}">
-                        {{ animal_type }}
-                    </option>
-                    {% endfor %}
+            <form action="/appts" method="POST">
+                <label for="sort_by">Sort by:</label>
+                <select name="sort_by" id="sort_by">
+                    <option value=""></option>
+                    <option value="appt_date ASC">Date &#8593</option>
+                    <option value="appt_date DESC">Date &#8595</option>
+                    <option value="animal_id ASC">Pet a-z</option>
+                    <option value="animal_id DESC">Pet z-a</option>
+                    <option value="owner_id ASC">Owner a-z</option>
+                    <option value="owner_id DESC">Owner z-a</option>
+                    <option value="vet_id ASC">Vet a-z</option>
+                    <option value="vet_id DESC">Vet z-a</option>
                 </select>
                 <button class="small-button">
                     <div id="button-content">
-                        <img src="../../static/img/icons/add_button.png">
+                        <img src="../../static/img/icons/search.png">
                     </div>
                 </button>
             </form>

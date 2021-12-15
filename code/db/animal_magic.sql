@@ -27,7 +27,7 @@ CREATE TABLE animals (
 CREATE TABLE appointments (
     id SERIAL PRIMARY KEY,
     note_text TEXT,
-    appt_date VARCHAR,
+    appt_date DATE,
     animal_id INT REFERENCES animals(id) ON DELETE CASCADE,
     vet_id INT REFERENCES vets(id) ON DELETE CASCADE
 );

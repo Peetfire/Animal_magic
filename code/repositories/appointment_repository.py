@@ -15,7 +15,7 @@ import repositories.animal_repository as animal_repo
 
 # Save
 def save(appt):
-    sql = "INSERT INTO appointments (note_text, appt_date, animal_id, vet_id) VALUES (%s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO appointments (note_text, appt_date, animal_id, vet_id) VALUES (%s, TO_DATE(%s, 'DD/MM/YYYY'), %s, %s) RETURNING id"
     values = [appt.note_text, appt.appt_date, appt.animal.id, appt.vet.id]
     results = run_sql(sql, values)
     appt.id = results[0]['id']
@@ -97,3 +97,14 @@ def select_animal_appts(animal):
         appts.append(appt)
     return appts
 
+# Select ALL appointments sorted by <selected>
+def select_all_sorted_by(sort_type, order):
+    appts = []
+    sql = f"SELECT appointments.* FROM appointments ORDER BY {sort_type} {order}"
+    results = run_sql(sql)
+    for result in results:
+        vet = vet_repo.select(result['vet_id'])
+        animal = animal_repo.select(result['animal_id'])
+        appt = Appointment(result['note_text'], result['appt_date'], vet, animal, result['id'])
+        appts.append(appt)
+    return appts

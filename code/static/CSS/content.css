@@ -127,3 +127,7 @@ select {
     flex-flow: column wrap;
     align-items: center;
 }
+select option {
+    background-color: white !important;
+    font-family: MyVirgilWebFont;
+}
