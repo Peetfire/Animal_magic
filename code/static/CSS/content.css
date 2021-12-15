@@ -13,6 +13,22 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+#large-content-container {
+    border-style: double;
+    border-radius: 20px;
+    border-width: 7px;
+    padding: 20px;
+    padding-bottom: 10px;
+    margin: 10px;
+    max-width: 90%;
+}
+#large-content-container h1 {
+    margin: 8px;
+    font-family: MyVirgilWebFont;
+    font-size: 2em;
+    text-align: center;
+    text-decoration-line: underline;
+}
 #content-container {
     border-style: double;
     border-radius: 20px;
@@ -20,7 +36,7 @@
     padding: 20px;
     padding-bottom: 10px;
     margin: 10px;
-    width: fit-content;
+    width: 350px;
 }
 #content-container h1 {
     margin: 8px;
@@ -30,16 +46,18 @@
     text-decoration-line: underline;
 }
 
-#content-container > div > a {
+a {
     color: grey;
     border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-#content-container > div > a:hover {
+a:hover {
     color: black;
 }
 
-#content-container > div > a:active {
+a:active {
     box-shadow: 0 2px #666;
     transform: translateY(2px);
 }
@@ -63,10 +81,11 @@ select {
 
 .row {
     font-family: MyVirgilWebFont;
-    font-size: 20px;
+    font-size: 17px;
     word-wrap: break-word;
     color: grey;
-    display: grid;
+    display: grid;  
+    
 }
 
 .primary-container {

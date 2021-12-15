@@ -1,15 +1,15 @@
 .animal-headings {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 0.6fr 1fr 1fr 1fr;
 }
 
 .animal-row {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 0.6fr 1fr 1fr 1fr;
     align-items: center;
 }
 
 .animal-col1{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
 .animal-col2{
     padding: 3px;
@@ -21,9 +21,9 @@
 }
 .animal-col4{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
 .animal-col5{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }

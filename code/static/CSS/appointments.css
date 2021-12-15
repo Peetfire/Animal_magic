@@ -1,27 +1,27 @@
 
 .appt-headings {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
 }
 
 .appt-row {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
     align-items: center;
 }
 
 .appt-col1{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
 .appt-col2{
     padding: 3px;
-    text-align: center;
+    text-align: left;
     
 }
 .appt-col3{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
 .appt-col4{
     padding: 3px;
-    text-align: center;
+    text-align: left;
 }
