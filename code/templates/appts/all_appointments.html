@@ -36,7 +36,12 @@
             </div>
         
             {% for appt in all_appts %}
-                <div class="row appt-row">
+                <!-- Set different color for alternate rows -->
+                {% set row_num = 1 %}
+                {% if loop.index % 2 == 0 %}
+                    {% set row_num = 2 %}
+                {% endif %}
+                <div class="row{{row_num}} appt-row">
                     <a href="/appts/{{ appt.get_id() }}"><div class="appt-col1">{{appt.appt_date}}</div></a>
                     <div class="appt-col2">{{appt.animal.get_name()}}</div>  
                     <div class="appt-col3">{{appt.note_text}}</div> 

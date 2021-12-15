@@ -13,6 +13,7 @@
         </div>
     
         {% for animal in all_animals %}
+        <!-- Set different color for alternate rows -->
             {% set row_num = 1 %}
             {% if loop.index % 2 == 0 %}
                 {% set row_num = 2 %}
