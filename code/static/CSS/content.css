@@ -8,6 +8,20 @@
     margin: 6px;
     margin-bottom: 12px;
 }
+.filter-bar{
+    height: fit-content;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+
+}
+
+.filter-bar > h4 {
+    margin: 5px;
+    margin-bottom: 7.5px;
+}
 #container {
     display: flex;
     flex-wrap: wrap;
@@ -36,7 +50,7 @@
     padding: 20px;
     padding-bottom: 10px;
     margin: 10px;
-    width: 350px;
+    max-width: 350px;
 }
 #content-container h1 {
     margin: 8px;
@@ -79,13 +93,26 @@ select {
     display: grid;
 }
 
-.row {
+.row1 {
     font-family: MyVirgilWebFont;
     font-size: 17px;
     word-wrap: break-word;
     color: grey;
     display: grid;  
     
+}
+.row2 {
+    font-family: MyVirgilWebFont;
+    font-size: 17px;
+    word-wrap: break-word;
+    color: black;
+    display: grid;    
+}
+.row2 > a {
+    color: black;
+}
+.row2 > a:hover {
+    color: grey;
 }
 
 .primary-container {

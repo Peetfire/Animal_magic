@@ -7,15 +7,15 @@
         <form action="/animals/{{animal.id}}" method="POST">
             <div class="headings">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="{{animal.get_name()}}">
+                <input type="text" id="name" name="name" value="{{animal.get_name()}}" required>
             </div>
             <div class="headings">
                 <label for="species">Species:</label>
-                <input type="text" id="species" name="species" value="{{animal.get_species()}}">
+                <input type="text" id="species" name="species" value="{{animal.get_species()}}" required>
             </div>
             <div class="headings">
                 <label for="dob">DoB:</label>
-                <input type="text" id="dob" name="dob" value="{{animal.get_dob()}}">
+                <input type="text" id="dob" name="dob" value="{{animal.get_dob()}}" required>
             </div>
             <div class="headings">
                 <label for="owner_id">Owner</label>

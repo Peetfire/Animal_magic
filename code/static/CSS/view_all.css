@@ -1,0 +1,8 @@
+.filter-row {
+    font-family: MyVirgilWebFont;
+    font-size: 17px;
+    word-wrap: break-word;
+    color: grey;
+    display: flex;
+    align-items: center; 
+} 

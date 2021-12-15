@@ -13,7 +13,11 @@
         </div>
     
         {% for animal in all_animals %}
-            <div class="row animal-row">
+            {% set row_num = 1 %}
+            {% if loop.index % 2 == 0 %}
+                {% set row_num = 2 %}
+            {% endif %}
+            <div class="row{{row_num}} animal-row">
                 <a href="/animals/{{ animal.get_id() }}"><div class="animal-col1">{{animal.get_name()}}</div></a>
                 <div class="animal-col2">{{animal.get_species()}}</div>
                 <div class="animal-col3">{{animal.get_dob()}}</div>
