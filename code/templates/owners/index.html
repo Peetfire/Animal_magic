@@ -11,7 +11,12 @@
         </div>
     
         {% for owner in all_owners %}
-            <div class="row owner-row">
+        <!-- Set different color for alternate rows -->
+        {% set row_num = 1 %}
+        {% if loop.index % 2 == 0 %}
+            {% set row_num = 2 %}
+        {% endif %}
+            <div class="row{{row_num}} owner-row">
                 <a href="/owners/{{ owner.get_id() }}"><div class="owner-col1">{{owner.get_name()}}</div></a>
                 <div class="owner-col2">{{owner.get_email()}}</div>
                 <div class="owner-col3">{{owner.get_phone()}}</div>

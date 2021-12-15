@@ -10,7 +10,12 @@
         </div>
     
         {% for vet in all_vets %}
-            <div class="row vet-row">
+        <!-- Set different color for alternate rows -->
+        {% set row_num = 1 %}
+        {% if loop.index % 2 == 0 %}
+            {% set row_num = 2 %}
+        {% endif %}
+            <div class="row{{row_num}} vet-row">
                 <a href="/vets/{{ vet.get_id() }}"><div class="vet-col1">{{vet.get_name()}}</div></a>
             </div>
         {% endfor %}

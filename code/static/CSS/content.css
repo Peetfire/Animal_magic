@@ -8,19 +8,20 @@
     margin: 6px;
     margin-bottom: 12px;
 }
-.filter-bar{
+.sort-bar{
     height: fit-content;
     width: 95%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-left: 10px;
-
 }
-
-.filter-bar > h4 {
+.sort-bar > h4 {
     margin: 5px;
     margin-bottom: 7.5px;
+}
+.sort-row > form > label{
+    font-family: MyVirgilWebFont;
 }
 #container {
     display: flex;
@@ -63,7 +64,7 @@
 a {
     color: grey;
     border-radius: 20px;
-    padding-left: 10px;
+    padding-left: 0px;
     padding-right: 10px;
 }
 
