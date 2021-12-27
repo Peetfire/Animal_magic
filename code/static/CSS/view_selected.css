@@ -3,11 +3,25 @@
     grid-template-columns: 1fr 1fr;
 }
 
+.view-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(236, 237, 240);
+    color: black;
+}
+
 .view-val {
     font-family: MyVirgilWebFont;
     font-size: 20px;
     word-wrap: break-word;
     color: grey;
+    display: grid;
+}
+.view-val-2 {
+    font-family: MyVirgilWebFont;
+    font-size: 20px;
+    word-wrap: break-word;
+    color: black;
     display: grid;
 }
 

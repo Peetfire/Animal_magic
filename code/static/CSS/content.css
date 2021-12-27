@@ -107,7 +107,8 @@ select {
     font-size: 17px;
     word-wrap: break-word;
     color: black;
-    display: grid;    
+    display: grid;   
+    background-color: rgb(236, 237, 240); 
 }
 .row2 > a {
     color: black;
