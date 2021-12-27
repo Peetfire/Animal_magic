@@ -22,7 +22,7 @@ def save(appt):
     
 def select_all():
     appts = []
-    sql = "SELECT * FROM appointments"
+    sql = "SELECT * FROM appointments ORDER BY appt_date DESC"
     results = run_sql(sql)
     for result in results:
         vet = vet_repo.select(result['vet_id'])
@@ -53,15 +53,17 @@ def delete(id):
     run_sql(sql, values)
 
 # Update 
-def upddate(appt):
-    sql = "UPDATE appointments SET (appt_date, note_text, animal_id, vet_id) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [appt.get_appt_date(), appt.get_note_text(), appt.animal.get_id(), appt.vet.get_id()]
+def update(appt):
+    sql = "UPDATE appointments SET (note_text, appt_date, animal_id, vet_id) = \
+        (%s, TO_DATE(%s, 'DD/MM/YYYY'), %s, %s) WHERE id = %s"
+    values = [appt.get_note_text(), appt.get_appt_date(), \
+        appt.animal.get_id(), appt.vet.get_id(), appt.get_id()]
     run_sql(sql, values)
 
 # SELECT ALL for VET
 def select_vet_appts(vet):
     appts = []
-    sql = "SELECT * FROM appointments WHERE vet_id = %s"
+    sql = "SELECT * FROM appointments WHERE vet_id = %s ORDER BY appt_date DESC"
     values = [vet.id]
     results = run_sql(sql, values)
     for result in results:
@@ -74,7 +76,7 @@ def select_vet_appts(vet):
 # SELECT ALL for Owner
 def select_owner_appts(owner):
     appts = []
-    sql = "SELECT appointments.* FROM appointments INNER JOIN animals ON animals.id = appointments.animal_id WHERE animals.owner_id = %s"
+    sql = "SELECT appointments.* FROM appointments INNER JOIN animals ON animals.id = appointments.animal_id WHERE animals.owner_id = %s ORDER BY appt_date DESC"
     values = [owner.id]
     results = run_sql(sql, values)
     for result in results:

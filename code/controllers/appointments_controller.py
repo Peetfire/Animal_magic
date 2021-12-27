@@ -33,10 +33,11 @@ def view_appt(id):
 @appointments_blueprint.route("/appts", methods=['POST'])
 def view_sorted_appts():
     sort_type = request.form['sort_by']
-    sort_by = sort_type.split(' ')
-    appts = appt_repo.select_all_sorted_by(sort_by[0], sort_by[1])
-    if len(appts) == 0:
-        appts = [Appointment(" ", " ", Animal(" ", " ", " "), Vet(" "))]
+    if sort_type[0] == " ":
+        appts = appt_repo.select_all()
+    else:
+        sort_by = sort_type.split(' ')
+        appts = appt_repo.select_all_sorted_by(sort_by[0], sort_by[1])
     return render_template("appts/index.html", all_appts=appts)
 
 # NEW
